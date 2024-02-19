@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> 
+    <title>Local Storage</title>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+
+  <div class="screen">
+
+    <div class="login">
+      <div>
+      <p>Username</p>
+      <section>
+        <input type="text" id="loginUser" placeholder="Input Username..." maxlength="15">
+        <i class="fa-solid fa-arrow-up" id="loginButton"></i>
+      </section>
+      <p id="desc">username wasn't available</p>
+    </div>
+    </div>
+
+    <!-- <div class="share">
+
+    </div> -->
+    <div class="comments">
+      <div class="closeComment" onclick="this.parentNode.style.visibility = 'hidden';"></div>
+      <div class="commentSection">
+        <p>Comments</p>
+        <div class="commentPlaceholder">
+          <p class="load">loading...</p>
+        </div>
+        <div class="typeSection">
+          <input autocomplete="off" type="text" name="Comment" id="insertText" placeholder="Write ur comment..." maxlength="150">
+          <i class="fa-solid fa-arrow-up" id="commentBtn" onclick="sendComment()"></i>
+        </div>
+      </div>
+      </div>
+
+    <div class="content">
+
+      <div class="user">
+        <div class="pfp"></div>
+        <a href="https://www.instagram.com/dzadafa" target="_blank"><p>Dzadafa</p></a>
+      </div>
+
+      <div class="msg"></div>
+
+      <div class="respond">
+        <i class="fa-solid fa-heart" id="like" onclick="like(false)"></i>
+        <i class="fa-solid fa-comment" id="comment" onclick="comment()"></i>
+        <i class="fa-solid fa-share" id="share"></i>
+        <p>31/12/23</p>
+      </div>
+
+    </div>
+
+    <div class="buttons">
+      <button id="back" onclick="nextOrBack('back')">Back</button>
+      <button id="next" onclick="nextOrBack('next')">Next</button>
+    </div>
+
+  </div>
+  <script type="module" src="Javascript/firebase.js"></script>
+  <script src="Javascript/script.js"></script>
+
+  </body>
+</html>

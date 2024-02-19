@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+  --Lato: "Lato", sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: rgb(37, 37, 37);
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--Lato);
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: #eaeaea;
+}
+
+i {
+  cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #eaeaea;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #090909;
+}
+
+#blinking {
+  min-width: 3px;
+  max-width: fit-content;
+  animation: blink 3s infinite;
+}
+
+.screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.content {
+  visibility: hidden;
+  width: 317px;
+  /* min-height: 150px; */
+  height: fit-content;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 30px;
+  color: #eaeaea;
+  font-size: 12px;
+  background: #1c1c1c;
+  box-shadow: 10px 10px 10px 0px #090909;
+}
+
+.user {
+  width: 100%;
+  /* border: 1px solid white; */
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.pfp {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin: 10px;
+  background-color: #9c9c9c;
+  background: url("Image/PP/7.png") no-repeat center;
+  background-size: cover;
+}
+
+.user p {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.msg {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px;
+  /* min-height: 50px; */
+  height: fit-content;
+}
+
+.respond {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  align-items: center;
+  padding: 10px 5px;
+}
+
+.respond i {
+  font-size: 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.respond p {
+  margin: 0px 10px;
+  color: #c9c9c9;
+}
+
+.buttons {
+  width: 317px;
+  display: flex;
+  justify-content: space-between;
+  visibility: hidden;
+}
+
+.buttons button {
+  font-family: var(--Lato);
+  font-weight: bold;
+  padding: 10px;
+  border: 0px;
+  width: 80px;
+  background-color: #005096;
+  color: #eaeaea;
+  border: 2px solid #1c1c1c;
+  box-shadow: 5px 5px 5px 0px #090909;
+  border-radius: 30px;
+  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.buttons button:nth-child(1) {
+  background-color: #d01d1d;
+}
+
+.buttons button:active {
+  box-shadow: 0px 0px 2px 0px #090909;
+}
+
+.login {
+  position: absolute;
+  z-index: 1;
+  margin: auto;
+  min-width: 317px;
+  min-height: 30px;
+  display: flex;
+  height: fit-content;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  color: #eaeaea;
+  font-size: 12px;
+  background: #1c1c1c;
+  box-shadow: 10px 10px 10px 0px #090909;
+}
+
+.login p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.login #desc {
+  font-size: smaller;
+  margin: 0;
+  font-weight: lighter;
+  color: #d92626;
+  display: none;
+}
+
+.login i {
+  padding: 10px;
+  /* border: 1px solid white; */
+  margin: 5px;
+}
+
+.login input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  color: #eaeaea;
+  border: 1px solid #eaeaea;
+  background-color: #1c1c1c;
+}
+
+.login div {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.login section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0px 10px;
+  /* border: 1px solid; */
+}
+
+.comments {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #000000bd;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.closeComment {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+
+.commentSection {
+  z-index: 1;
+  width: 317px;
+  min-height: 150px;
+  height: fit-content;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 30px;
+  color: #eaeaea;
+  font-size: 12px;
+  background: #1c1c1c;
+}
+
+.commentSection p {
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.commentPlaceholder {
+  min-height: 160px;
+  max-height: 210px;
+  overflow-y: scroll;
+}
+
+.commentSection .typeSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.commentSection .load {
+  border: 0;
+}
+
+.typeSection input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  color: #eaeaea;
+  border: 1px solid #eaeaea;
+  background-color: #1c1c1c;
+}
+
+.typeSection i {
+  font-size: 15px;
+  margin: 5px;
+  padding: 10px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.comment {
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: row;
+  align-items: center;
+  align-items: normal;
+}
+
+.comment .text,
+.comment .text p {
+  width: 100%;
+  min-width: 230px;
+  font-weight: normal;
+  border-bottom: 0px;
+  padding: 0;
+  margin: 0;
+}
+.comment .text p b {
+  background-color: #a8a8a895;
+  cursor: pointer;
+  font-weight: 100;
+  margin-top: 1px;
+  border-radius: 5px;
+  padding: 0px 2px 2px 2px;
+}
+
+.comment .pp {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin: 0px 10px 7px 0px;
+  background-image: url("Image/PP/7.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.comment i {
+  padding: 10px;
+}
+
+.text p:nth-child(1) {
+  font-weight: bold;
+}
+
+.text p:nth-child(2) {
+  cursor: pointer;
+}
+
+@keyframes blink {
+  0% {
+    border-right: 0;
+  }
+  100% {
+    border-right: 1px solid black;
+  }
+}
