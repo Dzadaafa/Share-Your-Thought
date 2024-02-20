@@ -72,7 +72,6 @@ function login(skip=false) {
         }
       })
     } else {
-      alert(skip.toString())
       document.querySelector(".login").style.visibility = "hidden";
       document.querySelector(".content").style.visibility = "visible";
       document.querySelector(".buttons").style.visibility = "visible";
@@ -92,7 +91,6 @@ function addData(u, c, p, counter, cNumb){
   }).then(() => {
     console.log('Successfully added');
   }).catch((error) => {
-    alert('Unsuccessfull');
     console.log(error);
   })
 }
@@ -143,7 +141,6 @@ async function updateData(c, user, counter, cNumb){
     console.log('Successfully update');
     return "done"
   }).catch((error) => {
-    alert('Unsuccessfull');
     console.log(error);
     return "fail"
   })
@@ -176,7 +173,6 @@ function removeData(u, c, p, counter, cNumb){
   .then(() => {
     console.log('Successfully delete');
   }).catch((error) => {
-    alert('Unsuccessfull');
     console.log(error);
   })
 }
@@ -192,7 +188,6 @@ function LNSLocal(name='var name', isSave=false, item, isJson=false) {
 }
 
 commentBtn.addEventListener('click', function(){
-  alert("nigga")
   sendComment()
 });
 commentIco.addEventListener('click', loadComment);
