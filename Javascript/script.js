@@ -2,15 +2,15 @@ var i = 0; //to count length
 var txt = [
   "Hi",
   "Roses are red, I said what i said\nTake yo ass to bed, turn off the light\nGet off that phone, and GO TO BED",
-  "You did well this year",
-  "I just want to tell you",
-  "Thank you for coming into my life, you are actually making me smile and laugh. Thank you for your understanding. i really appreciate you so much.",
+  "Met Shiso\n\n[attached image]\n\ncute isn't it",
+  "This gonn be a meme forum, if you're interested to take a part of this project\nDm <i>@Dzadafa</i> on insta\nOr send me an email\n<i>efslaboratory@gmail.com</i>",
+  "Bro this is a prototype, if ya wanna criticize or judge me\nI dare you at this post",
   "Happy new Years! see you next years",
   "Hope we make it next years ma bro",
 ];
 
 var txtCount = LNSLocal("txtCount") ? JSON.parse(LNSLocal("txtCount")) : 0; //count txt var, cause it was an array
-var speed = 60; //typing effect speed
+var speed = 40; //typing effect speed
 
 var likeVal = LNSLocal("likeVal")
   ? JSON.parse(LNSLocal("likeVal"))
@@ -71,11 +71,12 @@ function comment() {
 //changing text with typing effect
 function typeWriter() {
   like(true);
+  var written = txt[txtCount].replace(/\n/g, '<br>')
   if (i < txt[txtCount].length) {
-    document.querySelector(".msg").textContent += txt[txtCount].charAt(i);
+    document.querySelector(".msg").innerHTML += txt[txtCount].charAt(i);
     i++;
     setTimeout(typeWriter, speed);
-  }
+  } else { document.querySelector(".msg").innerHTML = written}
 }
 
 //Delete the text and add/decrease value txtCount
@@ -83,8 +84,8 @@ function nextOrBack(param, load=false) {
   var buttonBack = document.getElementById("back");
   var buttonNext = document.getElementById("next");
   if (i >= 0 && !load) {
-    var currentText = document.querySelector(".msg").textContent;
-    document.querySelector(".msg").textContent = currentText.slice(0, -1);
+    var currentText = document.querySelector(".msg").innerHTML;
+    document.querySelector(".msg").innerHTML = ''//currentText.slice(0, -1);
     i--;
     setTimeout(nextOrBack(param), speed);
   } else {

@@ -210,7 +210,7 @@ function retData(counter) {
           resolve(result);
         } else {
           console.log("Data doesn't exist");
-          resolve(null);
+          resolve(false);
         }
       })
       .catch((error) => {
@@ -298,11 +298,12 @@ async function deleteComment(e) {
     parent.remove();
     deleting = false;
   }, 2000);
+  loadComment()
 }
 
 function loadComment() {
   var a = document.querySelector(".load");
-  if (a) a.style.display = "block";
+  // if (a) a.style.display = "block";
   txtCount = LNSLocal("txtCount") ? JSON.parse(LNSLocal("txtCount")) : 0; //count txt var, cause it was an array
   allCommentCount = 0;
 
@@ -382,8 +383,7 @@ function loadComment() {
         }
       }
 
-      var a = document.querySelector(".load");
-      if (a) a.style.display = "none";
+      a.style.display = "none";
     })
     .catch((error) => console.error(error));
 }
