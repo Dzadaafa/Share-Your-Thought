@@ -1,7 +1,7 @@
 var i = 0; //to count length
 var txt = [
   "Hi",
-  "You've made it this far because you are strong- even on the days when you didn't think you were.",
+  "Roses are red, I said what i said\nTake yo ass to bed, turn off the light\nGet off that phone, and GO TO BED",
   "You did well this year",
   "I just want to tell you",
   "Thank you for coming into my life, you are actually making me smile and laugh. Thank you for your understanding. i really appreciate you so much.",
@@ -105,6 +105,19 @@ function nextOrBack(param, load=false) {
     }
     LNSLocal("txtCount", true, txtCount);
     typeWriter();
+  }
+}
+
+function signUpInForm(Login_Register="login") {
+  const a = document.querySelector("#register");
+  const b = document.querySelector("#login")
+  if (Login_Register.toLowerCase() == "login") {
+    a.style.display = "none";
+    b.style.display = "flex"; 
+  }
+  else {
+    b.style.display = "none";
+    a.style.display = "flex";
   }
 }
 

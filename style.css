@@ -64,7 +64,7 @@ i {
 }
 
 .content {
-  visibility: hidden;
+  display: none;
   width: 317px;
   /* min-height: 150px; */
   height: fit-content;
@@ -136,7 +136,7 @@ i {
   width: 317px;
   display: flex;
   justify-content: space-between;
-  visibility: hidden;
+  display: none;
 }
 
 .buttons button {
@@ -162,7 +162,7 @@ i {
   box-shadow: 0px 0px 2px 0px #090909;
 }
 
-.login {
+.signUpIn {
   position: absolute;
   z-index: 1;
   margin: auto;
@@ -182,36 +182,72 @@ i {
   box-shadow: 10px 10px 10px 0px #090909;
 }
 
-.login p {
+.signUpIn p {
   font-size: 15px;
   font-weight: bold;
 }
 
-.login #desc {
+.signUpIn #desc {
   font-size: smaller;
-  margin: 0;
+  margin-top: 5px;
   font-weight: lighter;
   color: #d92626;
-  display: none;
+  /* display: none; */
 }
 
-.login i {
+.signUpIn i {
   padding: 10px;
   /* border: 1px solid white; */
-  margin: 5px;
+  margin: 5px 3px 5px 0px;
 }
 
-.login input[type="text"] {
+.signUpIn input {
   width: 100%;
   padding: 10px;
   border-radius: 20px;
+  letter-spacing: 0.5px;
   font-size: 10px;
   color: #eaeaea;
   border: 1px solid #eaeaea;
   background-color: #1c1c1c;
 }
 
-.login div {
+.signUpIn #link {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.signUpIn p trigger {
+  font-weight: bold;
+  color: #8d37c2;
+  cursor: pointer;
+}
+
+.signUpIn #signIn {
+  width: 50%;
+  font-size: 12px;
+  margin-top: 10px;
+  background-color: #263daf;
+  transition: 1.5s ease;
+}
+
+.signUpIn #signIn:hover {
+  background-color: #22168c;
+}
+
+.signUpIn #signUp {
+  width: 50%;
+  font-size: 12px;
+  margin-top: 10px;
+  background-color: #d01d1d;
+  transition: 1.3s ease;
+}
+
+.signUpIn #signUp:hover {
+  background-color: #830808;
+}
+
+.signUpIn div {
   width: 100%;
   height: fit-content;
   display: flex;
@@ -221,7 +257,7 @@ i {
   padding: 10px;
 }
 
-.login section {
+.signUpIn section {
   width: 100%;
   display: flex;
   align-items: center;
@@ -229,6 +265,12 @@ i {
   flex-direction: row;
   padding: 0px 10px;
   /* border: 1px solid; */
+}
+
+.signUpIn section p {
+  font-size: smaller;
+  margin-right: 5px;
+  font-weight: lighter;
 }
 
 .comments {
@@ -308,7 +350,7 @@ i {
   padding: 10px;
 }
 
-input[type="text"]:focus {
+input:focus {
   outline: none;
 }
 
