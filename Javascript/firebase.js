@@ -94,17 +94,31 @@ function login(signup = false, skip = false, autoLog=false) {
 
         if (autoLog){
           var user = Object.keys(username)[0];
+          var profilePic = username[user];
           var password = decodeURIComponent(username.password);
+
           loginUser.value = user;
           passField.value = password;
+          return;
         } else {
           var user = loginUser.value.trim();
           var password = passField.value;
+          var profilePic = username[user];
+
+          if (!profilePic) retData(null, true, user).then((e) => { 
+            profilePic = e['profilePic'] 
+          }).catch((error) => console.error(error));
+
         }
 
           user && password 
           ? userData(user, null, password, false, false).then((e) => {
             if (e == "correct") {
+              const saveInfo = {
+                [user]: profilePic,
+                password: password
+              }
+              LNSLocal('username', true, saveInfo, true);
               for (i=0;i<loginCont.length;i++) loginCont[i].style.display = "none";
               contentCont.style.display = "flex";
               buttonsCont.style.display = "flex";
@@ -199,10 +213,11 @@ async function updateData(c, user, counter, cNumb) {
 }
 
 //retrieve data
-function retData(counter) {
+function retData(counter, login=false, searchUsn) {
   const dbRef = ref(db);
 
   return new Promise((resolve, reject) => {
+    if (!login) {
     get(child(dbRef, "CommentOn/" + `comment${counter}`))
       .then((snapshot) => {
         if (snapshot.exists()) {
@@ -217,6 +232,15 @@ function retData(counter) {
         console.log(error);
         reject(error);
       });
+    } else {
+      get(child(dbRef, "Users/" + "Username/" + searchUsn))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          var result = snapshot.val()
+          resolve(result)
+        }
+      })
+    }
   });
 }
 

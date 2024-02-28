@@ -46,6 +46,10 @@ i {
   background: #090909;
 }
 
+input[type='button']{
+  cursor: pointer;
+}
+
 #blinking {
   min-width: 3px;
   max-width: fit-content;

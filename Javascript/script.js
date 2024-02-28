@@ -5,8 +5,8 @@ var txt = [
   "Met Shiso\n\n[attached image]\n\ncute isn't it",
   "This gonn be a meme forum, if you're interested to take a part of this project\nDm <i>@Dzadafa</i> on insta\nOr send me an email\n<i>efslaboratory@gmail.com</i>",
   "Bro this is a prototype, if ya wanna criticize or judge me\nI dare you at this post",
-  "Happy new Years! see you next years",
-  "Hope we make it next years ma bro",
+  "Don't mind the date below, im not setting it yet",
+  "also, imma add the share button very soon\nhehe, just wait for it",
 ];
 
 var txtCount = LNSLocal("txtCount") ? JSON.parse(LNSLocal("txtCount")) : 0; //count txt var, cause it was an array
